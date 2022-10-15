@@ -28,36 +28,30 @@ int main()
 {
   char arr[50];
   int n=1;
+  cout << "Please Enter Simple Instruction"<<endl;
+  cout << "Instruction:"<<endl;
+  cin.getline(arr,sizeof(arr));
+  int m = strlen(arr);
+  input1 = convertToString(arr, m);
+  //cout <<"input is :"<< input1 << endl;
+  remove(arr,n);
+  //cout <<"n1_arr after remove: "<< n1_array[0]<< n1_array[1]<< n1_array[2]<< n1_array[3]<< n1_array[4]<<endl;
+
+
+  n++;
+
+
+
+
   cout << "Please Enter Block of Instruction. Press Ctrl + D to when you finish" <<endl;
   cout << "Block:" <<endl;
   while (cin.getline(arr,sizeof(arr)))
   {
-    //cout << input << endl;
 
 
 
-    if(n==1)
-    {
-      //cout <<"Array 1 entered: ";
-       //for (size_t i = 0; i < strlen(arr); i++)
-       //{
-        //  cout << arr[i];
 
-       //}
-      //  cout << endl;
-
-
-
-            int m = strlen(arr);
-           input1 = convertToString(arr, m);
-            //cout <<"INPUT 1 IS "<< input1<< endl;
-
-
-        remove(arr,n);
-
-        //cout <<"n1_arr after remove: "<< n1_array[0]<< n1_array[1]<< n1_array[2]<< n1_array[3]<< n1_array[4]<< n1_array[5]<< n1_array[6]<< n1_array[7]<< n1_array[8]<<endl;
-}
-    else if(n==2)
+    if(n==2)
     {
       //cout <<"Array 2 enered: ";
        //for (size_t i = 0; i < strlen(n2_array); i++)
@@ -114,10 +108,10 @@ int main()
 
 }
 int b = 0;
-ofstream outfile;
- outfile.open("finalout.txt");
-cout << "The pairs of Instructions that can be exexuted in parallel are:"<<endl;
-outfile << "The pairs of Instructions that can be exexuted in parallel are:"<<endl;
+  ofstream outfile;
+   outfile.open("finalout.txt");
+cout << "Then the output should be:"<<endl;
+outfile << "Then the output should be:"<<endl;
 if (n==2)
 {
   cout << "Need More Inputs!"<<endl;
@@ -137,7 +131,13 @@ else if (n==3)
 else if (n==4)
 {
  //cout << "n=3 was ran"<<endl;
-  if(compare(1,2))
+ if(compare(1,2))
+ {
+   cout << "("<<input1<<","<<input2<<")"<<endl;
+   outfile  << "("<<input1<<","<<input2<<")"<<endl;
+   b = 1;
+ }
+  if(compare(1,3))
   {
     cout << "("<<input1<<","<<input2<<")"<<endl;
     outfile  << "("<<input1<<","<<input2<<")"<<endl;
@@ -145,58 +145,29 @@ else if (n==4)
 
 
   }
-  if(compare(1,3))
-  {
-    cout << "("<<input1<<","<<input3<<")"<<endl;
-    outfile  << "("<<input1<<","<<input3<<")"<<endl;
-    b = 1;
 
-  }
-  if(compare(2,3))
-  {
-    cout << "("<<input2<<","<<input3<<")"<<endl;
-    outfile  << "("<<input2<<","<<input3<<")"<<endl;
-    b = 1;
-
-  }
 
 }
 else if (n==5)
 {
-    if(compare(1,2))
-    {
-      cout << "("<<input1<<","<<input2<<")"<<endl;
-      outfile << "("<<input1<<","<<input2<<")"<<endl;
-      b = 1;
-    }
-    if(compare(1,3))
-    {
-      cout << "("<<input1<<","<<input3<<")"<<endl;
-      outfile << "("<<input1<<","<<input3<<")"<<endl;
-      b = 1;
-    }
+  if(compare(1,2))
+  {
+    cout << "("<<input1<<","<<input2<<")"<<endl;
+    outfile  << "("<<input1<<","<<input2<<")"<<endl;
+    b = 1;
+  }
+   if(compare(1,3))
+   {
+     cout << "("<<input1<<","<<input2<<")"<<endl;
+     outfile  << "("<<input1<<","<<input2<<")"<<endl;
+     b = 1;
+
+
+   }
     if(compare(1,4))
     {
       cout << "("<<input1<<","<<input4<<")"<<endl;
       outfile  << "("<<input1<<","<<input4<<")"<<endl;
-      b = 1;
-    }
-    if(compare(2,3))
-    {
-      cout << "("<<input2<<","<<input3<<")"<<endl;
-      outfile  << "("<<input2<<","<<input3<<")"<<endl;
-      b = 1;
-    }
-    if(compare(2,4))
-    {
-      cout << "("<<input2<<","<<input4<<")"<<endl;
-      outfile << "("<<input2<<","<<input4<<")"<<endl;
-      b = 1;
-    }
-    if(compare(3,4))
-    {
-      cout << "("<<input3<<","<<input4<<")"<<endl;
-      outfile  << "("<<input3<<","<<input4<<")"<<endl;
       b = 1;
     }
 
