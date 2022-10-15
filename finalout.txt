@@ -1,6 +1,0 @@
-The pairs of Instructions that can be exexuted in parallel are:
-(cc,sd)
-(cc,ssd)
-(cc,kkl)
-(sd,kkl)
-(ssd,kkl)
